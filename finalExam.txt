@@ -1,0 +1,28 @@
+	def finalExam(self):
+                test = wxSingleChoiceDialog(self,"1. What are the types of variables covered in this Tutorial?  ",'Final Test',['(a) alphabet, numbers and roman numerals','(b) int, strings and double','(c) Fruits, Pets and Humans'],wx.CHOICEDLG_STYLE)
+                if test.ShowModal() == wx.ID_OK:
+                        userAnswers[0] = test.GetStringSelection()
+                        test.Destroy()
+                ttest = wxSingleChoiceDialog(self,"2. Which are the comparision operators?",'Final Test',['<, >, <=, >=, !=', '+, -, *, /, %', 'I, II, III, IV, V'],wx.CHOICEDLG_STYLE)
+                if test.ShowModal() == wx.ID_OK:
+                        userAnswers[1] = test.GetStringSelection()
+                        test.Destroy()
+                test = wxSingleChoiceDialog(self,"3. Which is a valid if statement? ",'Final Test',['if num:','if num == 3:', 'if 3=3'],wx.CHOICEDLG_STYLE)
+                if test.ShowModal() == wx.ID_OK:
+                        userAnswers[3] = test.GetStringSelection()
+                        test.Destroy()
+                test = wxSingleChoiceDialog(self,"4. What is missing in this while loop? \n	while _____:",'Final Test',['A condition','A picture','An if statement'],wx.CHOICEDLG_STYLE)
+                if test.ShowModal() == wx.ID_OK:
+                        userAnswers[3] = test.GetStringSelection()
+                        test.Destroy()
+                test = wxSingleChoiceDialog(self,"5. Which is a header of a function?",'Final Test',['if cow == 12:','def count(cows):', 'print "A dozen of Cows"'],wx.CHOICEDLG_STYLE)
+                if test.ShowModal() == wx.ID_OK:
+                        userAnswers[4] = test.GetStringSelection()
+                        test.Destroy()
+                finalAns = ["(b) int, strings and double","<, >, <=, >=, !=", "if num == 3:", "A condition", "def count(cows):"]
+
+                if self.checkSection(userAnswers, finalAns) == true:
+                        self.proceed()
+                else:
+                        self.tryAgain()
+                return self.checkSection(userAnswers, finalAns)
